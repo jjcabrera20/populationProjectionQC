@@ -14,5 +14,6 @@ with st.container():
     left_column, right_column = st.columns(2)
     with left_column:
         st.header('Cargar datos')
+        st.file_uploader(label='Load data from excel template',accept_multiple_files=False)
     with right_column:
         st.header('Cargar datos 2')
