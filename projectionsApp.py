@@ -3,6 +3,8 @@ import geopandas as gpd
 import requests
 import streamlit as st
 from streamlit_lottie import st_lottie
+from pathlib import Path
+
 st.set_page_config(page_title='Population projection QC app R4V', page_icon=':chart_with_upwards_trend:', layout='wide')
 # Load assets
 
@@ -30,7 +32,4 @@ with st.container():
     with right_column:
         st_lottie(animation, height=300, key='coding')
 
-url = 'https://www.r4v.info/sites/default/files/2022-06/Template_Population_projections_2023-24.xlsx'
-r = requests.get(url)
-open('temp.xls', 'wb').write(r.content)
-df = pd.read_excel('temp.xls')
+st.write(Path(__file__).parents[1])
