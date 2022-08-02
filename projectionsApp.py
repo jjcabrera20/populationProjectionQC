@@ -49,4 +49,4 @@ Template_file_path = os.getcwd() + '/Template_Population_projections_2023-24.xls
 template_projections = pd.read_excel(Template_file_path, engine='openpyxl', )
 
 if st.button('Run QC script'):
-    result = fun()
+    result = CheckFieldsCompliancy()
