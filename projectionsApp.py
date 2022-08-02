@@ -54,5 +54,5 @@ df_template_projections = pd.read_excel(Template_file_path, engine='openpyxl', )
 if country_data == None:
     pass
 else:
-    st.button('Run QC script')
-    result = CheckFieldsCompliancy(df_template_projections, df_country_data)
+    if st.button('Run QC script'):
+        result = CheckFieldsCompliancy(df_template_projections, df_country_data)
