@@ -20,6 +20,15 @@ def load_lottie_animation(url):
 
 
 animation = load_lottie_animation('https://assets2.lottiefiles.com/packages/lf20_16nllt42.json')
+
+
+# App logic
+def CheckFieldsCompliancy(template_dataframe, country_dataframe):
+    column_headers_a = list(template_dataframe.columns.values)
+    column_headers_b = list(country_dataframe.columns.values)
+    return st.write(column_headers_a)
+
+
 # Header
 with st.container():
     st.subheader('Web application for quality control population projection data RMRP 2023/2024')
@@ -39,10 +48,5 @@ with st.container():
 Template_file_path = os.getcwd() + '/Template_Population_projections_2023-24.xlsx'
 template_projections = pd.read_excel(Template_file_path, engine='openpyxl', )
 
-
-def fun():
-    return st.write('fun click')
-
-
-if st.button('add'):
+if st.button('Run QC script'):
     result = fun()
