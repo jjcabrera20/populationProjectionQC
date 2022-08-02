@@ -44,12 +44,15 @@ with st.container():
     with left_column:
         st.header('Load population projection data')
         country_data = st.file_uploader(label='Load data from excel template', accept_multiple_files=False)
+        df_country_data = pd.read_excel(country_data, engine='openpyxl', )
     with right_column:
         st_lottie(animation, height=300, key='coding')
 
 Template_file_path = os.getcwd() + '/Template_Population_projections_2023-24.xlsx'
 df_template_projections = pd.read_excel(Template_file_path, engine='openpyxl', )
-df_country_data = pd.read_excel(country_data, engine='openpyxl', )
 
-if st.button('Run QC script'):
+if country_data == None:
+    pass
+else:
+    st.button('Run QC script')
     result = CheckFieldsCompliancy(df_template_projections, df_country_data)
