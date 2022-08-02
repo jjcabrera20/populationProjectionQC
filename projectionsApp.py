@@ -28,14 +28,14 @@ def CheckFieldsCompliancy(template_dataframe, country_dataframe):
     column_headers_b = list(country_dataframe.columns.values)
     diff_a = set(column_headers_a).difference(set(column_headers_b))
     diff_b = set(column_headers_b).difference(set(column_headers_a))
-    return st.write(diff_a, diff_b)
+    return st.write('Missing columns on template' + diff_a, 'Non compliant columns on country file' + diff_b)
 
 
 # Header
 with st.container():
     st.subheader('Web application for quality control population projection data RMRP 2023/2024')
     st.title('QC Projection data RMRP 2023/2024')
-    st.write('This app will hel to develop a QC to population projections per country RMRP')
+    st.write('This app will help to develop a QC to population projections per country RMRP')
     st.write('[learn more>](https://r4v.info)')
 
 with st.container():
@@ -44,7 +44,7 @@ with st.container():
     with left_column:
         st.header('Load population projection data')
         country_data = st.file_uploader(label='Load data from excel template', accept_multiple_files=False)
-        if country_data == None:
+        if country_data is None:
             pass
         else:
             df_country_data = pd.read_excel(country_data, engine='openpyxl', )
@@ -54,7 +54,7 @@ with st.container():
 Template_file_path = os.getcwd() + '/Template_Population_projections_2023-24.xlsx'
 df_template_projections = pd.read_excel(Template_file_path, engine='openpyxl', )
 
-if country_data == None:
+if country_data is None:
     pass
 else:
     if st.button('Run QC script'):
