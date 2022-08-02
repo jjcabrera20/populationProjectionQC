@@ -46,7 +46,8 @@ with st.container():
         st_lottie(animation, height=300, key='coding')
 
 Template_file_path = os.getcwd() + '/Template_Population_projections_2023-24.xlsx'
-template_projections = pd.read_excel(Template_file_path, engine='openpyxl', )
+df_template_projections = pd.read_excel(Template_file_path, engine='openpyxl', )
+df_country_data = pd.read_excel(country_data, engine='openpyxl', )
 
 if st.button('Run QC script'):
-    result = CheckFieldsCompliancy()
+    result = CheckFieldsCompliancy(df_template_projections, df_country_data)
