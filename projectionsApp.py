@@ -28,7 +28,7 @@ def CheckFieldsCompliancy(template_dataframe, country_dataframe):
     column_headers_b = list(country_dataframe.columns.values)
     diff_a = set(column_headers_a).difference(set(column_headers_b))
     diff_b = set(column_headers_b).difference(set(column_headers_a))
-    return st.write(diff_a.to_frame(), diff_b.to_frame())
+    return st.write(pd.DataFrame(list(diff_a)), pd.DataFrame(list(diff_b)))
 
 
 # Header
