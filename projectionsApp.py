@@ -44,7 +44,10 @@ with st.container():
     with left_column:
         st.header('Load population projection data')
         country_data = st.file_uploader(label='Load data from excel template', accept_multiple_files=False)
-        df_country_data = pd.read_excel(country_data, engine='openpyxl', )
+        if country_data == None:
+            pass
+        else:
+            df_country_data = pd.read_excel(country_data, engine='openpyxl', )
     with right_column:
         st_lottie(animation, height=300, key='coding')
 
