@@ -31,6 +31,4 @@ with st.container():
         st_lottie(animation, height=300, key='coding')
 
 excel_url = 'https://www.r4v.info/sites/default/files/2022-06/Template_Population_projections_2023-24.xlsx'
-r = requests.get(excel_url)
-open('temp.xls', 'wb').write(r.content)
-df = pd.read_excel('temp.xls')
+df = pd.read_excel(excel_url)
