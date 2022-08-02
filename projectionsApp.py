@@ -31,5 +31,7 @@ with st.container():
         st.file_uploader(label='Load data from excel template',accept_multiple_files=False)
     with right_column:
         st_lottie(animation, height=300, key='coding')
-a=pd.read_excel(Path(__file__).parents[1]/ 'Template_Population_projections_2023-24.xlsx')
+file = Path(__file__).parents[1]/ 'Template_Population_projections_2023-24.xlsx'
+st.write(file)
+a=pd.read_excel(file)
 st.write(a)
