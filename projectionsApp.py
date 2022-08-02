@@ -38,3 +38,11 @@ with st.container():
 
 Template_file_path = os.getcwd() + '/Template_Population_projections_2023-24.xlsx'
 template_projections = pd.read_excel(Template_file_path, engine='openpyxl', )
+
+
+def fun():
+    return st.write('fun click')
+
+
+if st.button('add'):
+    result = fun()
