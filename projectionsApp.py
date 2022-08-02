@@ -26,7 +26,9 @@ animation = load_lottie_animation('https://assets2.lottiefiles.com/packages/lf20
 def CheckFieldsCompliancy(template_dataframe, country_dataframe):
     column_headers_a = list(template_dataframe.columns.values)
     column_headers_b = list(country_dataframe.columns.values)
-    return st.write(column_headers_a)
+    diff_a = set(column_headers_a).difference(set(column_headers_b))
+    diff_b = set(column_headers_b).difference(set(column_headers_a))
+    return st.write(diff_a, diff_b)
 
 
 # Header
