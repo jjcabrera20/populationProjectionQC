@@ -8,6 +8,8 @@ from streamlit_lottie import st_lottie
 from pathlib import Path
 
 st.set_page_config(page_title='Population projection QC app R4V', page_icon=':chart_with_upwards_trend:', layout='wide')
+
+
 # Load assets
 
 def load_lottie_animation(url):
@@ -29,11 +31,10 @@ with st.container():
     st.write('---')
     left_column, right_column = st.columns(2)
     with left_column:
-        st.header('Cargar datos')
-        st.file_uploader(label='Load data from excel template',accept_multiple_files=False)
+        st.header('Load population projection data')
+        country_data = st.file_uploader(label='Load data from excel template', accept_multiple_files=False)
     with right_column:
         st_lottie(animation, height=300, key='coding')
 
-file = os.getcwd() + '/Template_Population_projections_2023-24.xlsx'
-a=pd.read_excel(file,engine='openpyxl',)
-st.write(a)
+Template_file_path = os.getcwd() + '/Template_Population_projections_2023-24.xlsx'
+template_projections = pd.read_excel(Template_file_path, engine='openpyxl', )
