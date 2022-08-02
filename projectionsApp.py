@@ -1,3 +1,5 @@
+import pandas as pd
+import geopandas as gpd
 import requests
 import streamlit as st
 from streamlit_lottie import st_lottie
@@ -27,3 +29,8 @@ with st.container():
         st.file_uploader(label='Load data from excel template',accept_multiple_files=False)
     with right_column:
         st_lottie(animation, height=300, key='coding')
+
+excel_url = 'https://www.r4v.info/sites/default/files/2022-06/Template_Population_projections_2023-24.xlsx'
+r = requests.get(excel_url)
+open('temp.xls', 'wb').write(r.content)
+df = pd.read_excel('temp.xls')
