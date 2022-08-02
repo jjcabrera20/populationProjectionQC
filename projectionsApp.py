@@ -58,4 +58,5 @@ if country_data is None:
     pass
 else:
     if st.button('Run QC script'):
+        st.write('# Found non compliant columns')
         result = CheckFieldsCompliancy(df_template_projections, df_country_data)
