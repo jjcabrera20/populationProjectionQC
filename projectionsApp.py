@@ -1,3 +1,5 @@
+import os
+
 import pandas as pd
 import geopandas as gpd
 import requests
@@ -32,6 +34,6 @@ with st.container():
     with right_column:
         st_lottie(animation, height=300, key='coding')
 file = Path(__file__).parents[1]/ 'Template_Population_projections_2023-24.xlsx'
-st.write(file)
+st.write(os.listdir(os.getcwd()))
 a=pd.read_excel(file)
 st.write(a)
