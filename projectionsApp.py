@@ -57,6 +57,6 @@ df_template_projections = pd.read_excel(Template_file_path, engine='openpyxl', )
 if country_data is None:
     pass
 else:
-    if st.button('Run QC script'):
+    if st.button('Run QCA script'):
         st.write('# Found non compliant columns')
         result = CheckFieldsCompliancy(df_template_projections, df_country_data)
