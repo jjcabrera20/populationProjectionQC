@@ -37,6 +37,9 @@ with st.container():
     st.title('QC Projection data RMRP 2023/2024')
     st.write('This app will help to develop a QC to population projections per country RMRP')
     st.write('[learn more>](https://r4v.info)')
+    st.expander('Expander')
+    with st.expander('Expand'):
+        st.write('Juicy Sheets')
 
 with st.container():
     st.write('---')
