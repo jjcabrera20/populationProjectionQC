@@ -36,7 +36,7 @@ with st.container():
     st.subheader('Web application for quality control population projection data RMRP 2023/2024')
     st.title('QC Projection data RMRP 2023/2024')
     st.write('This app will help to develop a QC to population projections per country RMRP')
-    st.write('[learn more>](https://r4v.info)')
+    st.balloons(st.write('[learn more>](https://r4v.info)'))
 
 with st.container():
     st.write('---')
